@@ -11,21 +11,20 @@ public class Course {
     private String name;
     private List<Assignment> assignments;
 
-
-    public Course(JSONObject course) {
-        this.update(course);
+    public Course(String name, List<Assignment> assignments) {
+        this.update(name, assignments);
     }
 
-    public void update(JSONObject course) {
-        this.setName("TODO");
-        this.setAssignments(course);
+    private void update(String name, List<Assignment> assignments) {
+        this.setName(name);
+        this.setAssignments(assignments);
     }
 
     public List<Assignment> getAssignments() {
         return this.assignments;
     }
 
-    public void setAssignments(JSONObject course) {
+    private void setAssignments(List<Assignment> assignments) {
         // TODO implement
     }
 
