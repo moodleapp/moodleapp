@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import Moodle.Moodle;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String SUCCESS_KEY = "success";
@@ -19,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
 
         textUsername = (EditText)findViewById(R.id.ET_username);
         textPassword = (EditText) findViewById(R.id.ET_password);
@@ -44,7 +43,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isSuccess() {
-        return true;
+            try {
+                Moodle moodleUser = new Moodle();
+                String username = textUsername.getText().toString();
+                String password = textUsername.getText().toString();
+                moodleUser.Login(username, password);
+                return true;
+            }
+            catch (err) {return false;}
+
     }
 
 
