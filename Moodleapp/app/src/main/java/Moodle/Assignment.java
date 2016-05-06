@@ -1,17 +1,17 @@
 package Moodle;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import org.json.JSONObject;
 
 /**
  * Created by Rom Cyncynatus on 06/05/2016.
  */
 public class Assignment {
-    String id;
-    String name;
-    String coursename;
-    Date dueDate;
-    List<AttachedFile> attachedFiles;
+    private String id;
+    private String name;
+    private String coursename;
+    private Date dueDate;
+    private List<AttachedFile> attachedFiles;
 
     public Assignment() {
         this.id = "ed369c1bbdd3c528b70d2c9c8f875ce3";
@@ -22,22 +22,38 @@ public class Assignment {
     }
 
     public String getId() {
-        return this.id;
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
-        return this.name;
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCoursename() {
-        return this.coursename;
+        return coursename;
+    }
+
+    public void setCoursename(String coursename) {
+        this.coursename = coursename;
     }
 
     public Date getDueDate() {
-        return this.dueDate;
+        return dueDate;
     }
 
     public List<AttachedFile> getAttachedFiles() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void setAttachedFiles(List<AttachedFile> attachedFiles) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 }
