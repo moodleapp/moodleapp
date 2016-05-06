@@ -10,14 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-/**
- * Created by dnali on 5/5/2016.
- */
-public class taskActivity extends AppCompatActivity{
-<<<<<<< .merge_file_a06140
-=======
 
->>>>>>> .merge_file_a03688
+public class taskActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
