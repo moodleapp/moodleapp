@@ -11,6 +11,10 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 
+import java.util.List;
+
+import Moodle.Assignment;
+
 public class taskActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +22,7 @@ public class taskActivity extends AppCompatActivity{
 
         //test array
         String[] a = {"a", "b", "c"};
+        List<Assignment> assignmentList = m;
 
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, a);
         ListView taskList = (ListView) findViewById(R.id.listView);
