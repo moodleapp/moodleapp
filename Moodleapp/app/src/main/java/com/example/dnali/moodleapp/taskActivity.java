@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 /**
  * Created by dnali on 5/5/2016.
  */
-class taskActivity extends AppCompatActivity{
+public class taskActivity extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
