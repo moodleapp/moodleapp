@@ -1,4 +1,5 @@
-package Moodle;
+package MoodleDemo;
+
 
 import java.util.Date;
 import java.util.List;

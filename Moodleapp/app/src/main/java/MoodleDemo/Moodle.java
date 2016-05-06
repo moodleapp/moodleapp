@@ -1,4 +1,4 @@
-package Moodle;
+package MoodleDemo;
 
 import java.util.LinkedList;
 import java.util.List;

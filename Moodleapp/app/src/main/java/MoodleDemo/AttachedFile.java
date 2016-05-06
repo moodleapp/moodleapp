@@ -1,4 +1,5 @@
-package Moodle;
+package MoodleDemo;
+
 
 /**
  * Created by Rom Cyncynatus on 06/05/2016.
