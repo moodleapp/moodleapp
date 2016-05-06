@@ -26,10 +26,15 @@ public class MainActivity extends AppCompatActivity {
        login.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(MainActivity.this, taskActivity.class);
+               if (isSuccess()) {
+                   Intent intent = new Intent(MainActivity.this, taskActivity.class);
 //               intent.putExtra(SUCCESS_KEY, isSuccess());
-               startActivity(intent);
+                   startActivity(intent);
 //               overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+               }
+               else {
+                   Intent intent = new Intent(MainActivity.this, failLogin.class);
+               }
            }
        });
     }
