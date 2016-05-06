@@ -13,23 +13,31 @@ public class Assignment {
     Date dueDate;
     List<AttachedFile> attachedFiles;
 
+    public Assignment() {
+        this.id = "ed369c1bbdd3c528b70d2c9c8f875ce3";
+        this.name = "HW1";
+        this.coursename = "Calculus II";
+        this.dueDate = new Date(1463004000);
+        this.attachedFiles = null;
+    }
+
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getCoursename() {
-        return coursename;
+        return this.coursename;
     }
 
     public Date getDueDate() {
-        return dueDate;
+        return this.dueDate;
     }
 
     public List<AttachedFile> getAttachedFiles() {
-        return attachedFiles;
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

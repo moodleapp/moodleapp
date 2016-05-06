@@ -1,5 +1,6 @@
 package Moodle;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,7 +18,17 @@ public class Moodle {
 
     }
 
+    public List<Course> getCousrses() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
     public List<Assignment> getAllAssignments() {
-        return null;
+        List<Assignment> assigns = new LinkedList<>();
+
+        assigns.add(new Assignment());
+        assigns.add(new Assignment());
+        assigns.add(new Assignment());
+
+        return assigns;
     }
 }
