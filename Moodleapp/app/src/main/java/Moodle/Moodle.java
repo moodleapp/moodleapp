@@ -17,28 +17,33 @@ import org.json.JSONObject;
  */
 public class Moodle {
 
-    private Course[] courses; // all courses
-   // private boolean signedIn;
+    private static final String LOGIN_URL = "http://moodletest.com/login/token.php?";
+    private static final String LOGIN_SERVICE = "moodle_mobile_app";
 
-    public static void Login(String username, String password)  {
-        //signedIn = false;
-       // if (!signedIn) {
-            String URL = "http://moodletest.com/login/token.php?username=" + username + "&password=" + password + "&service=moodle_mobile_app";
-            JSONObject json;
-        try {
-            json = readJsonFromUrl(URL);
-            System.out.println(json.toString(4));
-        } catch (java.io.IOException e) {
-            System.out.println("Error : " + e.getMessage());
-        } catch (org.json.JSONException e) {
-            System.out.println("Error : " + e.getMessage());
-        }
-       // }
+    private List<Course> courses;
+    private boolean signedIn;
+
+    public Moodle() {
+        signedIn = false;
+    }
+
+    public void Login(String username, String password) throws IOException, JSONException {
+
+        // Build login request URL
+        String url = LOGIN_URL;
+        url += "username=" + username;
+        url += "&password=" + password;
+        url += "&service=" + LOGIN_SERVICE;
+
+        JSONObject json = readJsonFromUrl(url);
+        System.out.println("TODO REMOVE ME!!! (I AM HERE JUST FOR DEBUGGING)\n" + json.toString(4));
+
+        signedIn = true;
     }
 
     public void Logout() {
         courses = null;
-        //signedIn = false;
+        signedIn = false;
     }
 
     public List<Course> getCousrses() {
@@ -47,11 +52,9 @@ public class Moodle {
 
     public List<Assignment> getAllAssignments() {
         List<Assignment> assigns = new LinkedList<>();
-
-        assigns.add(new Assignment());
-        assigns.add(new Assignment());
-        assigns.add(new Assignment());
-
+        for (Course course : courses) {
+            assigns.addAll(course.getAssignments());
+        }
         return assigns;
     }
 
@@ -74,10 +77,6 @@ public class Moodle {
             sb.append((char) cp);
         }
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        Login("nir.levin", "Password1!");
     }
 
 
