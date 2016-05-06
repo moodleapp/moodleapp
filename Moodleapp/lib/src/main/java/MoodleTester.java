@@ -1,4 +1,3 @@
-package Moodle;
 
 import java.util.List;
 import java.io.BufferedReader;
@@ -14,16 +13,16 @@ import org.json.JSONObject;
 /**
  * Created by Rom Cyncynatus on 06/05/2016.
  */
-public class Moodle {
+public class MoodleTester {
 
-    private Course[] courses; // all courses
-   // private boolean signedIn;
+    //private Course[] courses; // all courses
+    // private boolean signedIn;
 
     public static void Login(String username, String password)  {
         //signedIn = false;
-       // if (!signedIn) {
-            String URL = "http://moodletest.com/login/token.php?username=" + username + "&password=" + password + "&service=moodle_mobile_app";
-            JSONObject json;
+        // if (!signedIn) {
+        String URL = "http://moodletest.com/login/token.php?username=" + username + "&password=" + password + "&service=moodle_mobile_app";
+        JSONObject json;
         try {
             json = readJsonFromUrl(URL);
             System.out.println(json.toString(4));
@@ -32,7 +31,7 @@ public class Moodle {
         } catch (org.json.JSONException e) {
             System.out.println("Error : " + e.getMessage());
         }
-       // }
+        // }
     }
 
     public void Logout() {
@@ -40,9 +39,9 @@ public class Moodle {
         //signedIn = false;
     }
 
-    public List<Assignment> getAllAssignments() {
+   /* public List<Assignment> getAllAssignments() {
         return null;
-    }
+    }*/
 
     private static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
@@ -93,4 +92,3 @@ public class Moodle {
             }
         }
     }
-}
