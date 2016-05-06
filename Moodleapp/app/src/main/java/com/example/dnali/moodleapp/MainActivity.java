@@ -32,11 +32,10 @@ public class MainActivity extends AppCompatActivity  {
         Button login = (Button) findViewById(R.id.b_login);
 
 
-
         login.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v) {
-               if (isSuccess(moodleUser)) {
+               if (true) {  //isSuccess(moodleUser)) {
                    Intent intent = new Intent(MainActivity.this, taskActivity.class);
 //               intent.putExtra(SUCCESS_KEY, isSuccess());
                    startActivity(intent);
@@ -49,15 +48,16 @@ public class MainActivity extends AppCompatActivity  {
        });
     }
 
-
+    /*
     private boolean isSuccess(Moodle User) {
-
-                String username = textUsername.getText().toString();
-                String password = textUsername.getText().toString();
-                User.Login(username, password);
-                return true;
-
-
+                try {
+                    String username = textUsername.getText().toString();
+                    String password = textUsername.getText().toString();
+                    User.Login(username, password);
+                    return true;
+                }
+                catch (e){};
     }
+    */
 
 }
