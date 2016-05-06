@@ -1,4 +1,4 @@
-package Moodle;
+
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import org.json.JSONObject;
 /**
  * Created by Rom Cyncynatus on 06/05/2016.
  */
-public class Moodle {
+public class MoodleTester {
 
     //private Course[] courses; // all courses
     // private boolean signedIn;
