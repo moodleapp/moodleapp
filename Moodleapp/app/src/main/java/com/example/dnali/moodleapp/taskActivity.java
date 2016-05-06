@@ -20,7 +20,7 @@ public class taskActivity extends AppCompatActivity{
         String[] a = {"a", "b", "c"};
 
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, a);
-        ListView tasckList = (ListView) findViewById(R.id.listView);
-        tasckList.setAdapter(adp);
+        ListView taskList = (ListView) findViewById(R.id.listView);
+        taskList.setAdapter(adp);
     }
 }
