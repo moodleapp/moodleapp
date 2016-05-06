@@ -24,7 +24,6 @@
         android:id="@+id/b_login"
         android:layout_marginBottom="40dp"
         android:clickable="true"
-        android:onClick="pushOnButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

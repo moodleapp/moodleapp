@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String SUCCESS_KEY = "success";
     private EditText textUsername;
     private EditText textPassword;
     @Override
@@ -25,12 +26,16 @@ public class MainActivity extends AppCompatActivity {
        login.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(getApplicationContext(), taskActivity.class);
-               //              intent.putExtra(SUCCESS_KEY, isSuccess());
+               Intent intent = new Intent(MainActivity.this, taskActivity.class);
+//               intent.putExtra(SUCCESS_KEY, isSuccess());
                startActivity(intent);
-               overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+//               overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
            }
        });
+    }
+
+    private boolean isSuccess() {
+        return true;
     }
 
 
