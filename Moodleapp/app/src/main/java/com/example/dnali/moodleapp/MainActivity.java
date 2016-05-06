@@ -10,19 +10,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import Moodle.Moodle;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String SUCCESS_KEY = "success";
     private EditText textUsername;
     private EditText textPassword;
+    private Moodle moodleUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-
+        moodleUser = new Moodle();
         textUsername = (EditText)findViewById(R.id.ET_username);
         textPassword = (EditText) findViewById(R.id.ET_password);
         Button login = (Button) findViewById(R.id.b_login);
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
        login.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v) {
-               if (isSuccess()) {
+               if (isSuccess(moodleUser)) {
                    Intent intent = new Intent(MainActivity.this, taskActivity.class);
 //               intent.putExtra(SUCCESS_KEY, isSuccess());
                    startActivity(intent);
@@ -43,8 +44,15 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
-    private boolean isSuccess() {
-        return true;
+    private boolean isSuccess(Moodle User) {
+            try {
+                String username = textUsername.getText().toString();
+                String password = textUsername.getText().toString();
+                User.Login(username, password);
+                return true;
+            }
+            catch (err) {return false;}
+
     }
 
 
