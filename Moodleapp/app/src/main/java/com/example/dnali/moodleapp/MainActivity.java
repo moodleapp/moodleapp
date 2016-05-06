@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
        login.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+               Intent intent = new Intent(getApplicationContext(), taskActivity.class);
                //              intent.putExtra(SUCCESS_KEY, isSuccess());
                startActivity(intent);
                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
