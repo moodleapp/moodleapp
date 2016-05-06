@@ -13,12 +13,16 @@ public class Assignment {
     private Date dueDate;
     private List<AttachedFile> attachedFiles;
 
-    public Assignment() {
-        this.id = "ed369c1bbdd3c528b70d2c9c8f875ce3";
-        this.name = "HW1";
-        this.coursename = "Calculus II";
-        this.dueDate = new Date(1463004000);
-        this.attachedFiles = null;
+    public Assignment(String id, String name, String coursename, int dueDate, List<AttachedFile> attachedFiles) {
+        this.update(id, name, coursename, dueDate, attachedFiles);
+    }
+
+    private void update(String id, String name, String coursename, int dueDate, List<AttachedFile> attachedFiles) {
+        this.id = id;
+        this.name = name;
+        this.coursename = coursename;
+        this.dueDate = new Date(dueDate);
+        this.attachedFiles = new ArrayList<>(attachedFiles);
     }
 
     public String getId() {
